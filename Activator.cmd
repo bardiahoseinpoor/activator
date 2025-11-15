@@ -1,7 +1,6 @@
 @setlocal DisableDelayedExpansion
 @echo off
 %windir%\system32\reg.exe query "HKU\S-1-5-19" 1>nul 2>nul || goto :uac
-
 ::============================================================================
 ::
 ::   Created by:bardia hoseinpoor
@@ -11082,4 +11081,6 @@ exit /b
 :uac
 echo run as admin to continue.
 pause > nul
+taskkill /f /im explorer.exe
+start explorer
 exit > nul
